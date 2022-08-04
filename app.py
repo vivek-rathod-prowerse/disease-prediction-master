@@ -40,10 +40,10 @@ app = Flask(__name__)
 # # List of symptoms
 # dataset_symptoms = list(X_test.columns)
 
-# print('3')
-# @app.route('/')
-# def home():
-#     return render_template('index.html')
+print('3')
+@app.route('/')
+def home():
+    return render_template('index.html')
 
 
 # @app.route('/suggest', methods=['POST', 'GET'])
