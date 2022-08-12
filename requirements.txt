@@ -1,0 +1,10 @@
+Flask
+numpy
+scikit-learn
+pandas
+nltk
+beautifulsoup4
+more-itertools
+sortedcollections
+cloudpickle
+gunicorn

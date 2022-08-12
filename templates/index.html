@@ -1,0 +1,648 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0"/>
+  <title>Disease Prediction</title>
+
+  <!-- CSS  -->
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <link href="./static/css/materialize.css" type="text/css" rel="stylesheet" media="screen,projection"/>
+  <link href="./static/css/style.css" type="text/css" rel="stylesheet" media="screen,projection"/>
+</head>
+
+<body>
+  <nav class="light-blue lighten-1" role="navigation">
+    <div class="nav-wrapper container">
+      <ul class="right hide-on-med-and-down">
+        <li><a>Developed by XCugas Technology</a></li>
+      </ul>
+    </div>
+  </nav>
+
+
+  <div class="section no-pad-bot">
+    <div class="container">
+      <br><br>
+      <h1 class="header center orange-text">Old Disease Prediction Code</h1>
+
+      <div class="row">
+    <form action='/suggest' method="post" id="form" class="col s12">
+      <div class="row">
+        <div class="input-field col s4">
+            <label for="s1"><b>Symptom-1</b></label>
+            <br>
+          <input id="s1" name="Symptom1" placeholder="enter symptom"  type="text" class="validate">
+        </div>
+        <div class="input-field col s4">
+          <label for="s2"><b> Symptom-2</b></label>
+            <br>
+          <input id="s2" name="Symptom2" placeholder="enter symptom"  type="text" class="validate">
+        </div>
+
+        <div class="input-field col s4">
+            <label for="s3"><b>Symptom-3</b></label>
+            <br>
+          <input id="s3" name="Symptom3" placeholder="enter symptom" type="text" class="validate">
+        </div>
+
+
+        <div class="input-field col s4">
+            <label for="s4"><b>Symptom-4</b></label>
+            <br>
+          <input id="s4" name="Symptom4" placeholder="enter symptom" type="text" class="validate">
+        </div>
+
+
+        <div class="input-field col s4">
+            <label for="s5"><b>Symptom-5</b></label>
+            <br>
+          <input id="s5" name="Symptom5" placeholder="enter symptom" type="text" class="validate">
+        </div>
+
+
+        <div class="input-field col s4">
+              <label for="s6"><b>Symptom-6</b></label>
+              <br>
+            <input id="s6" name="Symptom6" placeholder="enter symptom" type="text" class="validate">
+          </div>
+
+        <div class="input-field col s4">
+              <label for="s7"><b>Symptom-7</b></label>
+              <br>
+            <input id="s7" name="Symptom7" placeholder="enter symptom" type="text" class="validate">
+          </div>
+
+        <div class="input-field col s4">
+              <label for="s8"><b>Symptom-8</b></label>
+              <br>
+            <input id="s8" name="Symptom8" placeholder="enter symptom" type="text" class="validate">
+          </div>
+
+        <div class="input-field col s4">
+              <label for="s9"><b>Symptom-9</b></label>
+              <br>
+            <input id="s9" name="Symptom9" placeholder="enter symptom" type="text" class="validate">
+          </div>
+
+        <div class="input-field col s4">
+              <label for="s10"><b>Symptom-10</b></label>
+              <br>
+            <input id="s10" name="Symptom10" placeholder="enter symptom" type="text" class="validate">
+          </div>
+        </div>
+
+
+
+      <div class="row center">
+          <button id="submit" type="submit" class="btn-large waves-effect waves-light orange">Symptom</button>
+      </div>
+    </form>
+      </div>
+
+      <br>
+        <p id="result"></p>
+      <br>
+
+
+
+    </div>
+
+  </div>
+    <br><br>
+
+  <div class="section no-pad-bot">
+    <div class="container">
+      <br><br>
+      <h1 class="header center orange-text">Predict the disease with gender as male</h1>
+
+      <div class="row">
+    <form action='/male_suggest' method="post" id="form_male" class="col s12">
+      <div class="row">
+        <div class="input-field col s4">
+            <label for="s1"><b>Symptom-1</b></label>
+            <br>
+          <input id="s1_male" name="Symptom1" placeholder="enter symptom"  type="text" class="validate">
+        </div>
+        <div class="input-field col s4">
+          <label for="s2"><b> Symptom-2</b></label>
+            <br>
+          <input id="s2_male" name="Symptom2" placeholder="enter symptom"  type="text" class="validate">
+        </div>
+
+        <div class="input-field col s4">
+            <label for="s3"><b>Symptom-3</b></label>
+            <br>
+          <input id="s3_male" name="Symptom3" placeholder="enter symptom" type="text" class="validate">
+        </div>
+
+
+        <div class="input-field col s4">
+            <label for="s4"><b>Symptom-4</b></label>
+            <br>
+          <input id="s4_male" name="Symptom4" placeholder="enter symptom" type="text" class="validate">
+        </div>
+
+
+        <div class="input-field col s4">
+            <label for="s5"><b>Symptom-5</b></label>
+            <br>
+          <input id="s5_male" name="Symptom5" placeholder="enter symptom" type="text" class="validate">
+        </div>
+
+
+        <div class="input-field col s4">
+              <label for="s6"><b>Symptom-6</b></label>
+              <br>
+            <input id="s6_male" name="Symptom6" placeholder="enter symptom" type="text" class="validate">
+          </div>
+
+        <div class="input-field col s4">
+              <label for="s7"><b>Symptom-7</b></label>
+              <br>
+            <input id="s7_male" name="Symptom7" placeholder="enter symptom" type="text" class="validate">
+          </div>
+
+        <div class="input-field col s4">
+              <label for="s8"><b>Symptom-8</b></label>
+              <br>
+            <input id="s8_male" name="Symptom8" placeholder="enter symptom" type="text" class="validate">
+          </div>
+
+        <div class="input-field col s4">
+              <label for="s9"><b>Symptom-9</b></label>
+              <br>
+            <input id="s9_male" name="Symptom9" placeholder="enter symptom" type="text" class="validate">
+          </div>
+
+        <div class="input-field col s4">
+              <label for="s10"><b>Symptom-10</b></label>
+              <br>
+            <input id="s10_male" name="Symptom10" placeholder="enter symptom" type="text" class="validate">
+          </div>
+        </div>
+
+
+
+      <div class="row center">
+          <button id="submit_male" type="submit" class="btn-large waves-effect waves-light orange">Symptom (Male)</button>
+      </div>
+    </form>
+      </div>
+
+      <br>
+        <p id="result_male"></p>
+      <br>
+
+
+
+    </div>
+
+  </div>
+  <br><br>
+
+  <div class="section no-pad-bot">
+    <div class="container">
+      <br><br>
+      <h1 class="header center orange-text">Predict the disease with gender as female and age as infant/child/adult/elderly</h1>
+
+      <div class="row">
+    <form action='/female_age_suggest' method="post" id="form_female_age" class="col s12">
+      <div class="row">
+        <div class="input-field col s4">
+            <label for="s1"><b>Symptom-1</b></label>
+            <br>
+          <input id="s1_female_age" name="Symptom1" placeholder="enter symptom"  type="text" class="validate">
+        </div>
+        <div class="input-field col s4">
+          <label for="s2"><b> Symptom-2</b></label>
+            <br>
+          <input id="s2_female_age" name="Symptom2" placeholder="enter symptom"  type="text" class="validate">
+        </div>
+
+        <div class="input-field col s4">
+            <label for="s3"><b>Symptom-3</b></label>
+            <br>
+          <input id="s3_female_age" name="Symptom3" placeholder="enter symptom" type="text" class="validate">
+        </div>
+
+
+        <div class="input-field col s4">
+            <label for="s4"><b>Symptom-4</b></label>
+            <br>
+          <input id="s4_female_age" name="Symptom4" placeholder="enter symptom" type="text" class="validate">
+        </div>
+
+
+        <div class="input-field col s4">
+            <label for="s5"><b>Symptom-5</b></label>
+            <br>
+          <input id="s5_female_age" name="Symptom5" placeholder="enter symptom" type="text" class="validate">
+        </div>
+
+
+        <div class="input-field col s4">
+              <label for="s6"><b>Symptom-6</b></label>
+              <br>
+            <input id="s6_female_age" name="Symptom6" placeholder="enter symptom" type="text" class="validate">
+          </div>
+
+        <div class="input-field col s4">
+              <label for="s7"><b>Symptom-7</b></label>
+              <br>
+            <input id="s7_female_age" name="Symptom7" placeholder="enter symptom" type="text" class="validate">
+          </div>
+
+        <div class="input-field col s4">
+              <label for="s8"><b>Symptom-8</b></label>
+              <br>
+            <input id="s8_female_age" name="Symptom8" placeholder="enter symptom" type="text" class="validate">
+          </div>
+
+        <div class="input-field col s4">
+              <label for="s9"><b>Symptom-9</b></label>
+              <br>
+            <input id="s9_female_age" name="Symptom9" placeholder="enter symptom" type="text" class="validate">
+          </div>
+
+        <div class="input-field col s4">
+              <label for="s10"><b>Symptom-10</b></label>
+              <br>
+            <input id="s10_female_age" name="Symptom10" placeholder="enter symptom" type="text" class="validate">
+          </div>
+        </div>
+
+
+
+      <div class="row center">
+          <button id="submit_female_age" type="submit" class="btn-large waves-effect waves-light orange">Symptom (Female)</button>
+      </div>
+    </form>
+      </div>
+
+      <br>
+        <p id="result_female_age"></p>
+      <br>
+
+
+
+    </div>
+
+  </div>
+
+  <br><br>
+
+  <div class="section no-pad-bot">
+    <div class="container">
+      <br><br>
+      <h1 class="header center orange-text">Predict the disease with gender as male and age as infant/child/adult/elderly</h1>
+
+      <div class="row">
+    <form action='/male_age_suggest' method="post" id="form_male_age" class="col s12">
+      <div class="row">
+        <div class="input-field col s4">
+            <label for="s1"><b>Symptom-1</b></label>
+            <br>
+          <input id="s1_male_age" name="Symptom1" placeholder="enter symptom"  type="text" class="validate">
+        </div>
+        <div class="input-field col s4">
+          <label for="s2"><b> Symptom-2</b></label>
+            <br>
+          <input id="s2_male_age" name="Symptom2" placeholder="enter symptom"  type="text" class="validate">
+        </div>
+
+        <div class="input-field col s4">
+            <label for="s3"><b>Symptom-3</b></label>
+            <br>
+          <input id="s3_male_age" name="Symptom3" placeholder="enter symptom" type="text" class="validate">
+        </div>
+
+
+        <div class="input-field col s4">
+            <label for="s4"><b>Symptom-4</b></label>
+            <br>
+          <input id="s4_male_age" name="Symptom4" placeholder="enter symptom" type="text" class="validate">
+        </div>
+
+
+        <div class="input-field col s4">
+            <label for="s5"><b>Symptom-5</b></label>
+            <br>
+          <input id="s5_male_age" name="Symptom5" placeholder="enter symptom" type="text" class="validate">
+        </div>
+
+
+        <div class="input-field col s4">
+              <label for="s6"><b>Symptom-6</b></label>
+              <br>
+            <input id="s6_male_age" name="Symptom6" placeholder="enter symptom" type="text" class="validate">
+          </div>
+
+        <div class="input-field col s4">
+              <label for="s7"><b>Symptom-7</b></label>
+              <br>
+            <input id="s7_male_age" name="Symptom7" placeholder="enter symptom" type="text" class="validate">
+          </div>
+
+        <div class="input-field col s4">
+              <label for="s8"><b>Symptom-8</b></label>
+              <br>
+            <input id="s8_male_age" name="Symptom8" placeholder="enter symptom" type="text" class="validate">
+          </div>
+
+        <div class="input-field col s4">
+              <label for="s9"><b>Symptom-9</b></label>
+              <br>
+            <input id="s9_male_age" name="Symptom9" placeholder="enter symptom" type="text" class="validate">
+          </div>
+
+        <div class="input-field col s4">
+              <label for="s10"><b>Symptom-10</b></label>
+              <br>
+            <input id="s10_male_age" name="Symptom10" placeholder="enter symptom" type="text" class="validate">
+          </div>
+        </div>
+
+
+
+      <div class="row center">
+          <button id="submit_male_age" type="submit" class="btn-large waves-effect waves-light orange">Symptom (Female)</button>
+      </div>
+    </form>
+      </div>
+
+      <br>
+        <p id="result_male_age"></p>
+      <br>
+
+
+
+    </div>
+
+  </div>
+
+  <br><br>
+
+  <div class="section no-pad-bot">
+    <div class="container">
+      <br><br>
+      <h1 class="header center orange-text">Predict the disease with gender as female</h1>
+
+      <div class="row">
+    <form action='/female_suggest' method="post" id="form_female" class="col s12">
+      <div class="row">
+        <div class="input-field col s4">
+            <label for="s1"><b>Symptom-1</b></label>
+            <br>
+          <input id="s1_female" name="Symptom1" placeholder="enter symptom"  type="text" class="validate">
+        </div>
+        <div class="input-field col s4">
+          <label for="s2"><b> Symptom-2</b></label>
+            <br>
+          <input id="s2_female" name="Symptom2" placeholder="enter symptom"  type="text" class="validate">
+        </div>
+
+        <div class="input-field col s4">
+            <label for="s3"><b>Symptom-3</b></label>
+            <br>
+          <input id="s3_female" name="Symptom3" placeholder="enter symptom" type="text" class="validate">
+        </div>
+
+
+        <div class="input-field col s4">
+            <label for="s4"><b>Symptom-4</b></label>
+            <br>
+          <input id="s4_female" name="Symptom4" placeholder="enter symptom" type="text" class="validate">
+        </div>
+
+
+        <div class="input-field col s4">
+            <label for="s5"><b>Symptom-5</b></label>
+            <br>
+          <input id="s5_female" name="Symptom5" placeholder="enter symptom" type="text" class="validate">
+        </div>
+
+
+        <div class="input-field col s4">
+              <label for="s6"><b>Symptom-6</b></label>
+              <br>
+            <input id="s6_female" name="Symptom6" placeholder="enter symptom" type="text" class="validate">
+          </div>
+
+        <div class="input-field col s4">
+              <label for="s7"><b>Symptom-7</b></label>
+              <br>
+            <input id="s7_female" name="Symptom7" placeholder="enter symptom" type="text" class="validate">
+          </div>
+
+        <div class="input-field col s4">
+              <label for="s8"><b>Symptom-8</b></label>
+              <br>
+            <input id="s8_female" name="Symptom8" placeholder="enter symptom" type="text" class="validate">
+          </div>
+
+        <div class="input-field col s4">
+              <label for="s9"><b>Symptom-9</b></label>
+              <br>
+            <input id="s9_female" name="Symptom9" placeholder="enter symptom" type="text" class="validate">
+          </div>
+
+        <div class="input-field col s4">
+              <label for="s10"><b>Symptom-10</b></label>
+              <br>
+            <input id="s10_female" name="Symptom10" placeholder="enter symptom" type="text" class="validate">
+          </div>
+        </div>
+
+
+
+      <div class="row center">
+          <button id="submit_female" type="submit" class="btn-large waves-effect waves-light orange">Symptom (Female)</button>
+      </div>
+    </form>
+      </div>
+
+      <br>
+        <p id="result_female"></p>
+      <br>
+
+
+
+    </div>
+
+  </div>
+
+  <br><br>
+
+  </div>
+  </div>
+
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+
+  <script>
+
+          $(document).ready(function () {
+                $("#form").submit(function (event) {
+                    var formData = {
+                    s1: $("#s1").val(),
+                    s2: $("#s2").val(),
+                    s3: $("#s3").val(),
+                    s4: $("#s4").val(),
+                    s5: $("#s5").val(),
+                    s6: $("#s6").val(),
+                    s7: $("#s7").val(),
+                    s8: $("#s8").val(),
+                    s9: $("#s9").val(),
+                    s10: $("#s10").val(),
+                    };
+                    console.log(formData);
+                    $.ajax({
+                    type: "POST",
+                    url: "suggest",
+                    data: formData,
+                    dataType: "json",
+                    encode: true,
+                    }).done(function (data) {
+                        console.log(data);
+                        $('#result').html(data);
+
+                    });
+
+                    event.preventDefault();
+                });
+            });
+
+            $(document).ready(function () {
+                $("#form_male").submit(function (event) {
+                    var formData = {
+                    s1: $("#s1_male").val(),
+                    s2: $("#s2_male").val(),
+                    s3: $("#s3_male").val(),
+                    s4: $("#s4_male").val(),
+                    s5: $("#s5_male").val(),
+                    s6: $("#s6_male").val(),
+                    s7: $("#s7_male").val(),
+                    s8: $("#s8_male").val(),
+                    s9: $("#s9_male").val(),
+                    s10: $("#s10_male").val(),
+                    };
+                    console.log(formData);
+                    $.ajax({
+                    type: "POST",
+                    url: "male_suggest",
+                    data: formData,
+                    dataType: "json",
+                    encode: true,
+                    }).done(function (data) {
+                        console.log(data);
+                        $('#result_male').html(data);
+
+                    });
+
+                    event.preventDefault();
+                });
+            });
+
+            $(document).ready(function () {
+                $("#form_female").submit(function (event) {
+                    var formData = {
+                    s1: $("#s1_female").val(),
+                    s2: $("#s2_female").val(),
+                    s3: $("#s3_female").val(),
+                    s4: $("#s4_female").val(),
+                    s5: $("#s5_female").val(),
+                    s6: $("#s6_female").val(),
+                    s7: $("#s7_female").val(),
+                    s8: $("#s8_female").val(),
+                    s9: $("#s9_female").val(),
+                    s10: $("#s10_female").val(),
+                    };
+                    console.log(formData);
+                    $.ajax({
+                    type: "POST",
+                    url: "female_suggest",
+                    data: formData,
+                    dataType: "json",
+                    encode: true,
+                    }).done(function (data) {
+                        console.log(data);
+                        $('#result_female').html(data);
+                    });
+
+                    event.preventDefault();
+                });
+            });
+
+            $(document).ready(function () {
+                $("#form_female_age").submit(function (event) {
+                    var formData = {
+                    s1: $("#s1_female_age").val(),
+                    s2: $("#s2_female_age").val(),
+                    s3: $("#s3_female_age").val(),
+                    s4: $("#s4_female_age").val(),
+                    s5: $("#s5_female_age").val(),
+                    s6: $("#s6_female_age").val(),
+                    s7: $("#s7_female_age").val(),
+                    s8: $("#s8_female_age").val(),
+                    s9: $("#s9_female_age").val(),
+                    s10: $("#s10_female_age").val(),
+                    };
+                    console.log(formData);
+                    $.ajax({
+                    type: "POST",
+                    url: "female_age_suggest",
+                    data: formData,
+                    dataType: "json",
+                    encode: true,
+                    }).done(function (data) {
+                        console.log(data);
+                        $('#result_female_age').html(data);
+                    });
+
+                    event.preventDefault();
+                });
+            });
+
+            $(document).ready(function () {
+                $("#form_male_age").submit(function (event) {
+                    var formData = {
+                    s1: $("#s1_male_age").val(),
+                    s2: $("#s2_male_age").val(),
+                    s3: $("#s3_male_age").val(),
+                    s4: $("#s4_male_age").val(),
+                    s5: $("#s5_male_age").val(),
+                    s6: $("#s6_male_age").val(),
+                    s7: $("#s7_male_age").val(),
+                    s8: $("#s8_male_age").val(),
+                    s9: $("#s9_male_age").val(),
+                    s10: $("#s10_male_age").val(),
+                    };
+                    console.log(formData);
+                    $.ajax({
+                    type: "POST",
+                    url: "male_age_suggest",
+                    data: formData,
+                    dataType: "json",
+                    encode: true,
+                    }).done(function (data) {
+                        console.log(data);
+                        $('#result_male_age').html(data);
+                    });
+
+                    event.preventDefault();
+                });
+            });
+  </script>
+
+  <!--<footer class="page-footer orange">-->
+    <!--<div class="container">-->
+      <!--<div class="row">-->
+        <!--<div class="col l6 s12">-->
+          <!--<h5 class="white-text">About</h5>-->
+          <!--<p class="grey-text text-lighten-4">Just another kid trying to make sense of this world through the lens of Ml and hopefully leave it better than she received it.</p>-->
+
+
+  <!--</footer>-->
+
+  </body>
+</html>
