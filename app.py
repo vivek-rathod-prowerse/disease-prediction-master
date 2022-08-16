@@ -1,6 +1,6 @@
 from flask import Flask, request, render_template
 import pandas as pd
-import warnings
+'''import warnings
 from decimal import Decimal
 import nltk
 nltk.download('stopwords')
@@ -16,19 +16,19 @@ from itertools import combinations
 from collections import Counter
 import operator
 from sklearn.linear_model import LogisticRegression
-import json
+import json'''
 
 print('2')
-warnings.simplefilter("ignore")
+'''warnings.simplefilter("ignore")
 stop_words = stopwords.words('english')
 lemmatizer = WordNetLemmatizer()
-splitter = RegexpTokenizer(r'\w+')
+splitter = RegexpTokenizer(r'\w+')'''
 app = Flask(__name__)
-df_comb = pd.read_csv("dataset/dis_sym_dataset_dr_comb.csv") # Disease combination
+'''df_comb = pd.read_csv("dataset/dis_sym_dataset_dr_comb.csv") # Disease combination
 X_train = df_comb.iloc[:, 1:]
-Y_train = df_comb.iloc[:, 0:1]
+Y_train = df_comb.iloc[:, 0:1]'''
 
-rf =   LogisticRegression()
+'''rf =   LogisticRegression()
 rf = rf.fit(X_train, Y_train)
 scores = cross_val_score(rf, X_train, Y_train, cv=3)
 score = round(Decimal(scores.mean()*100),2)
@@ -40,7 +40,7 @@ Y_test = test.iloc[:, 0:1]
 x_test=test.drop('label_dis',axis=1)
 
 # List of symptoms
-dataset_symptoms = list(X_test.columns)
+dataset_symptoms = list(X_test.columns)'''
 
 print('3')
 @app.route('/')
